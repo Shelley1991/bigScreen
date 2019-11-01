@@ -1,0 +1,572 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-10-31 14:48:48
+ * @LastEditTime: 2019-10-31 15:54:56
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Json_Code\Internet-ofthings\elevator.html
+ -->
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>电梯</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/elevatorCssFile.css">
+    <link rel="stylesheet" href="css/elevator.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <style type="text/css">
+        .to__led-number {
+            font-family: 'Roboto';
+            position: relative;
+            font-size: 2rem;
+            font-weight: bold;
+            height: 100%;
+            display: flex;
+            flex: 33;
+            align-items: center;
+            justify-content: center;
+            background: url(img/数字.png) no-repeat;
+            background-size: 100% 100%;
+            margin: 0 1px;
+        }
+        
+        .to__led-number--no {
+            flex: 1;
+            width: 0px;
+            margin-top: 4%;
+            background: 0;
+            color: #F7C547;
+            font-size: 1.6rem;
+        }
+    </style>
+</head>
+
+<body onselectstart="return false">
+    <!--[if lt IE 7]>
+             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+         <![endif]-->
+    <div class="container">
+        <!-- header -->
+        <div class="header flexR">
+            <div class="img1">
+                <div class="box1 flexC">
+                    <div class="time" id="timeOne">08:00:40</div>
+                    <div class="date" id="timeTwo">2019.09.23 星期一</div>
+                </div>
+            </div>
+            <div class="title" style="display: flex;justify-content: center;align-items: center;">
+                <img src="img/大标题.png" width="100%" style="margin-top:8px;" />
+            </div>
+            <div class="img2 flexR">
+                <div style="margin-left: auto;margin-right: 2% ;">湖州市政府</div>
+                <div>
+                    <img src="img/三角形.png" style="margin-top: 20%;" />
+                </div>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="content flexR">
+            <div class="left flexC">
+                <div class="positioning flexR spaceBetween" style="height: 8%;cursor: pointer;" id="positioning">
+                    <div class="flexR" style="display: flex;align-items: center;">
+                        <img src="img/地名按钮-位置图标.png" alt="" class="img3">
+                        <p class="position_city" id="place_names"></p>
+                    </div>
+                    <img src="img/s级.png" alt="" height="60%" style="margin-top:-1%;margin-right: 6%;">
+                </div>
+                <div class="overview flexC spaceBetween">
+                    <div class="tts" style="font-size: 1.3rem;height: 14%;">电梯运行情况</div>
+                    <div class="overview_cont" style="height: 81%;">
+                        <div class="alignItems flexR" style="width: 100%; height:100%;display: flex;justify-content: center;">
+                            <img src="img/电梯.png" alt="" style="width: 25%;height: 75%;">
+                            <div class="flexC" style="height: 100%;width: 60%;margin-top:20%;">
+                                <div class="flexR" style="display: flex;justify-content: center;">
+                                    <img src="img/Group44.png" height="14px" />
+                                    <div class="flexC textLeft" style="color: white;">
+                                        <span class="textA" id="upDown">上/下</span>
+                                        <span class="textC">当前方向状态&nbsp;&nbsp;</span>
+                                    </div>
+                                </div>
+                                <div class="flexR" style="margin-top:8%;display: flex;justify-content: center;">
+                                    <img src="img/Group45.png" height="14px" />
+                                    <div class="flexC textLeft" style="color: white;">
+                                        <span class="textA" id="speed"> 0m/s</span>
+                                        <span class="textC">当前速度状态&nbsp;&nbsp;</span>
+                                    </div>
+                                </div>
+                                <div class="flexR" style="margin-top: 8%;display: flex;justify-content: center;">
+                                    <img src="img/Group46.png" height="14px" />
+                                    <div class="flexC textLeft" style="color: white;">
+                                        <span class="textA" id="floor">0F</span>
+                                        <span class="textC">当前位置状态&nbsp;&nbsp;</span>
+                                    </div>
+                                </div>
+                                <div class="flexR" style="margin-top: 8%;display: flex;justify-content: center;">
+                                    <img src="img/Group47.png" height="14px" />
+                                    <div class="flexC textLeft" style="color: white;">
+                                        <span class="textA" id="onOff">开/关</span>
+                                        <span class="textC">当前电梯门状态</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Safety_performance flexC spaceBetween" style="height: 38%;">
+                    <!-- 41.38 -->
+                    <div class="tts flexR spaceBetween" style="height: 13%;">
+                        <div style="font-size: 1.3rem;color: #FFFFFF;font-family: Microsoft JhengHei;">电梯参数</div>
+                    </div>
+                    <div class="flexR" style="height: 84%;">
+                        <div class="flex1 flexC spaceBetween" style="color: white;">
+                            <div class="flexR leftEle spaceBetween">
+                                <div class="flexR" style="width: 70%;">
+                                    <img src="img/Line1.png" />
+                                    <div class="flexC spaceBetween" style="margin-left: 3%;padding: 3px 0px 1px 0px;">
+                                        <div style="color: rgba(255, 255, 255, 0.6);font-size: 1rem;">
+                                            向上最大速度
+                                        </div>
+                                        <span style="color: #F76261;" class="parameter"> m/s</span>
+                                    </div>
+                                </div>
+                                <span class="textStyle" id="upbig_speed">0</span>
+                            </div>
+
+                            <div class="flexR leftEle spaceBetween">
+                                <div class="flexR" style="width: 70%;">
+                                    <img src="img/Line3.png" />
+                                    <div class="flexC spaceBetween" style="margin-left: 3%;padding: 3px 0px 1px 0px;">
+                                        <div style="color: rgba(255, 255, 255, 0.6);font-size: 1rem;">
+                                            总楼层高
+                                        </div>
+                                        <span style="color: #F7C547;" class="parameter"> m</span>
+                                    </div>
+                                </div>
+                                <span class="textStyle" id="total_height">0</span>
+                            </div>
+                            <div class="flexR leftEle spaceBetween">
+                                <div class="flexR" style="width: 70%;">
+                                    <img src="img/Line5.png" />
+                                    <div class="flexC spaceBetween" style="width: 70%;margin-left: 3%;padding: 3px 0px 1px 0px;">
+                                        <div style="color: rgba(255, 255, 255, 0.6);font-size: 1rem;">
+                                            开门时间
+                                        </div>
+                                        <span style="color: #00AAFF;" class="parameter"> s</span>
+                                    </div>
+                                </div>
+                                <span class="textStyle" id="opendoor_time">0</span>
+                            </div>
+                            <div class="flexR leftEle spaceBetween">
+                                <div class="flexR" style="width: 70%;">
+                                    <img src="img/Line7.png" />
+                                    <div class="flexC spaceBetween" style="width: 70%;margin-left: 3%;padding: 3px 0px 1px 0px;">
+                                        <div style="color: rgba(255, 255, 255, 0.6);font-size: 1rem;">
+                                            默认楼层
+                                        </div>
+                                        <span style="color: #2DB154;" class="parameter"> f</span>
+                                    </div>
+                                </div>
+                                <span class="textStyle" id="default_floor">0</span>
+                            </div>
+                        </div>
+                        <div class="flex1 flexC spaceBetween" style="color: white;">
+                            <div class="flexR leftEle spaceBetween">
+                                <div class="flexR" style="width: 70%;">
+                                    <img src="img/Line1.png" />
+                                    <div class="flexC spaceBetween" style="width: 70%;margin-left: 3%;padding: 3px 0px 1px 0px;">
+                                        <div style="color: rgba(255, 255, 255, 0.6);font-size: 1rem;">
+                                            向下最大速度
+                                        </div>
+                                        <span style="color: #F76261;" class="parameter"> m/s</span>
+                                    </div>
+                                </div>
+                                <span class="textStyle" id="downbig_speed">0</span>
+                            </div>
+                            <div class="flexR leftEle spaceBetween">
+                                <div class="flexR" style="width: 70%;">
+                                    <img src="img/Line3.png" />
+                                    <div class="flexC spaceBetween" style="width: 70%;margin-left: 3%;padding: 3px 0px 1px 0px;">
+                                        <div style="color: rgba(255, 255, 255, 0.6);font-size: 1rem;">
+                                            平均层高
+                                        </div>
+                                        <span style="color: #F7C547;" class="parameter"> m</span>
+                                    </div>
+                                </div>
+                                <span class="textStyle" id="avg_height">0</span>
+                            </div>
+                            <div class="flexR leftEle spaceBetween">
+                                <div class="flexR" style="width: 70%;">
+                                    <img src="img/Line5.png" />
+                                    <div class="flexC spaceBetween" style="width: 70%;margin-left: 3%;padding: 3px 0px 1px 0px;">
+                                        <div style="color: rgba(255, 255, 255, 0.6);font-size: 1rem;">
+                                            关门时间
+                                        </div>
+                                        <span style="color: #00AAFF;" class="parameter"> s</span>
+                                    </div>
+                                </div>
+                                <span class="textStyle" id="closedoor_time">0</span>
+                            </div>
+                            <div class="flexR leftEle spaceBetween">
+                                <div class="flexR" style="width: 70%;">
+                                    <img src="img/Line7.png" />
+                                    <div class="flexC spaceBetween" style="width: 70%;margin-left: 3%;padding: 3px 0px 1px 0px;">
+                                        <div style="color: rgba(255, 255, 255, 0.6);font-size: 1rem;">
+                                            门宽
+                                        </div>
+                                        <span style="color: #2DB154;" class="parameter">cm</span>
+                                    </div>
+                                </div>
+                                <span class="textStyle" id="door_wide">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center flexC">
+                <div class="run flexC spaceBetween" style="height: 12%;background: none;">
+                    <div class="Digital_animation flexR spaceBetween">
+                        <div class="animation flexC spaceBetween">
+                            <div class="ans ans_tt"> 运行总时长（h）</div>
+                            <div class="ans ans1 flexR spaceBetween">
+                            </div>
+                        </div>
+                        <div class="animation flexC spaceBetween">
+                            <div class="ans ans_tt"> 运行总里程（km）</div>
+                            <div class="ans ans2 flexR spaceBetween">
+                            </div>
+                        </div>
+                        <div class="animation flexC spaceBetween">
+                            <div class="ans ans_tt"> 运行总楼层（layers）</div>
+                            <div class="ans ans3 flexR spaceBetween">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map" style="height: 7%;background: none;margin-top: 2%;">
+                    <div class="Digital_bottom flexR spaceBetween">
+                        <div class="animation an_bt1 spaceBetween">
+                            <div class="she">运送总人数(<span id="unit1"></span>人)</div>
+                            <div style="font-size: 16px;color: #FFB641;font-weight: bold;display: flex;align-items: center;" id="total_number_of">0</div>
+                        </div>
+                        <div class="animation an_bt2 spaceBetween">
+                            <div class="she">维保总次数(<span id="unit2"></span>次)</div>
+                            <div style="font-size: 16px;color: #F05858;font-weight: bold;display: flex;align-items: center;" id="total_count">0</div>
+                        </div>
+                        <div class="animation an_bt3 spaceBetween">
+                            <div class="she">正常运转时间(<span id="unit3"></span>小时)</div>
+                            <div style="font-size: 16px;color: #00AAFF;font-weight: bold;display: flex;align-items: center;" id="running_time">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="statistical flexC spaceBetween alignItems" style="width:100%;height: 15%;color: rgba(255, 255, 255, 0.6);margin-top: 2%;">
+                    <div class="flexR spaceAround statistical_top" style="width: 100%;height:30%;background:#00293D;">
+                        <div style="width:20%;"><img src="img/运行状态.png" alt=""> 运行状态
+                        </div>
+                        <div style="width:20%;"><img src="img/次数.png" alt="">次数</div>
+                        <div style="width:20%;"><img src="img/最大加速度值.png" alt="">最大加速度值</div>
+                        <div style="width:20%;"><img src="img/平均振幅.png" alt="" style="width:10px;">平均振幅</div>
+                        <div style="width:20%;"><img src="img/总时长.png" alt="">总时长</div>
+                    </div>
+                    <div class="flexR spaceAround statistical_bottom" style="width:100%;height:70%;background:#001925;">
+                        <div class="flexC" style="width:20%;height:100%;display:flex;align-items: center;">
+                            <div class="flex1" style="border-bottom: 1px solid #003048;width: 100%;">上行</div>
+                            <div class="flex1">下行</div>
+                        </div>
+                        <div class="flexC" style="width:20%;height:100%;color:#fff;">
+                            <div class="flexR flex1" style="border-bottom: 1px solid #003048;">
+                                <div style="margin-right: 2%;"><span id="up" style="font-size: 1.5rem;">0</span></div><span id="unit_up1"></span>次
+                            </div>
+                            <div class="flexR flex1">
+                                <div style="margin-right: 2%;"><span id="down" style="font-size: 1.5rem;">0</span></div><span id="unit_up2"></span>次
+                            </div>
+                        </div>
+                        <div class="flexC" style="width:20%;height:100%;color:#fff;">
+                            <div class="flexR flex1" style="border-bottom: 1px solid #003048;">
+                                <div style="margin-right: 2%;"><span id="upSpeed" style="font-size: 1.5rem;">0</span></div>m/s²
+                            </div>
+                            <div class="flexR flex1">
+                                <div style="margin-right: 2%;"><span id="downSpeed" style="font-size: 1.5rem;">0</span></div>m/s²
+                            </div>
+                        </div>
+                        <div class="flexC" style="width:20%;height:100%;color:#fff;">
+                            <div class="flexR flex1" style="border-bottom: 1px solid #003048;">
+                                <div style="margin-right: 2%;"><span id="upSwing" style="font-size: 1.5rem;">0</span></div>mm
+                            </div>
+                            <div class="flexR flex1">
+                                <div style="margin-right: 2%;"><span id="downSwing" style="font-size: 1.5rem;">0</span></div>mm
+                            </div>
+                        </div>
+                        <div class="flexC" style="width:20%;height:100%;color:#fff;">
+                            <div class="flexR flex1" style="border-bottom: 1px solid #003048;">
+                                <div style="margin-right: 2%;"><span id="upTime" style="font-size: 1.5rem;">0</span></div><span id="unit_up3"></span>小时
+                            </div>
+                            <div class="flexR flex1">
+                                <div style="margin-right: 2%;"><span id="downTime" style="font-size: 1.5rem;">0</span></div><span id="unit_up4"></span>小时
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 频繁时段 -->
+                <div class="flexR" style="height: 35%;max-height:282px;color: #FFFFFF;">
+                    <div class="" style="width: 50%;height: 100%;">
+                        <div class="flexR" style="margin: 15px 0px 0px 10px;align-items: center;">
+                            <img src="img/频繁时段-图标.png" class="img6" />
+                            <div style="font-size: 1.3rem;">频繁时段(%)</div>
+                        </div>
+                        <div style="width: 85%;height:75%;margin: 0px 0px 0px 20px;position: relative;">
+                            <div id="fre_quent" style="width: 100%;height:100%;"></div>
+                        </div>
+                    </div>
+
+                    <div style="width: 50%;height: 100%;">
+                        <div class="tts flexR spaceBetween" style="background: none;margin: 10px 0px 0px 0px;align-items: center;">
+                            <div style="font-size: 1.3rem;"><img src="img/频繁时段-图标.png" class="img6" />电梯总里程(m)</div>
+                            <ul class="flexR uls cbc" style="font-size: 1rem;" id="health_uls">
+                                <li id="1" style="color: #00AAFF;">周</li>|
+                                <li id="2">月</li>|
+                                <li id="3">年</li>
+                            </ul>
+                        </div>
+                        <div style="width: 85%;height:75%;margin: -10px 50px 0px 20px;position: relative;">
+                            <div id="total_mil" style="width:100%;height:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 45%;max-height: 342px;">
+                    <div class="tts flexR spaceBetween" style="height: 15%;background: url(img/背景.png) no-repeat;background-size: 100% 100%;">
+                        <div style="font-size: 1.3rem;">楼层详情</div>
+                        <ul class="flexR uls cbc" style="font-size: 1.4rem;" id="floor_uls">
+                            <li data-id="day">日</li>|
+                            <li data-id="week">周</li>|
+                            <li data-id="month">月</li>|
+                            <li style="color:#00AAFF" data-id="year">年</li>
+                        </ul>
+                    </div>
+                    <div class="flexC qw" style="height: 83%;margin-top: 1%;">
+                        <div class="fault_tt flexR" style="height: 15%;font-size: 1.3rem;background: none;margin-top: 0px;">
+                            <div class="flex1" style="flex:0 80px">
+                                <img src="img/楼层详情-楼层.png" alt="" class="img6"> 楼层
+                            </div>
+                            <div class="flex1">
+                                <img src="img/楼层详情-停留次数.png" alt="" class="img6"> 停留次数
+                                <div class="flexC spaceBetween" style="cursor: pointer;height: 45%;width: 7%; margin-left: 3%;" id="stay_id">
+                                    <img src="img/PolygonG1.png" id="one" />
+                                    <img src="img/PolygonG3.png" id="two" />
+                                </div>
+                            </div>
+                            <div class="flex1">
+                                <img src="img/楼层详情-开关门次数.png" alt="" class="img6"> 开关门次数
+                                <div class="flexC spaceBetween" style="cursor: pointer;height: 45%;width: 7%; margin-left: 3%;" id="switch_id">
+                                    <img src="img/Polygon1.png" id="three" />
+                                    <img src="img/Polygon4.png" id="four" />
+                                </div>
+                            </div>
+                            <div class="flex1">
+                                <img src="img/楼层详情-运送人数.png" alt="" class="img6"> 运送人数
+                                <div class="flexC spaceBetween" style="cursor: pointer;height: 45%;width: 7%; margin-left: 3%;" id="transport_id">
+                                    <img src=" img/PolygonB1.png" id="five" />
+                                    <img src="img/PolygonB4.png" id="six" />
+                                </div>
+                            </div>
+                            <div class="flex1">
+                                <img src="img/楼层详情-停留时间.png" alt="" class="img6"> 停留时间
+                                <div class="flexC spaceBetween" style="cursor: pointer;height: 45%;width: 7%; margin-left: 3%;" id="staytime_id">
+                                    <img src="img/PolygonL4.png" id="seven" />
+                                    <img src="img/PolygonL2.png" id="eight" />
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="fault_cont scrolls" id="fault_cont_data" style="overflow:scroll;overflow-x: hidden;">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right flexC spaceBetween" style="height: 99%;">
+                <!-- 天气层 -->
+                <div class="maintenance flexC" style="height: 20%;">
+                    <div class="tts flexR spaceBetween" style="height: 35%;">
+                        <div style="font-size: 1.3rem;">天气</div>
+                        <ul class="flexR uls cbc" style="font-size: 1rem;" id="weather_click">
+                            <li id="1" style="color:#00AAFF">今日</li>|
+                            <li id="2">五天</li>
+                        </ul>
+                    </div>
+                    <div class="flexR spaceBetween tian" style="height: 60%;margin-top: 4%;align-items: center;" id="today_weather">
+                        <div style="width: 20%;display: flex;align-items: center;justify-content: center;" class="flexC">
+                            <img src="" width="50%" id="wea_img" />
+                            <p style="color: white;text-align: center;margin-top: 10px;" id="wea"></p>
+                        </div>
+                        <div style="width: 75%;height:100%;align-items: center;" class="flexR spaceAround">
+                            <div style="color: rgba(255, 255, 255, 0.6);">
+                                <div class="flex1 flexR">
+                                    <img src="img/天气-温度.png" alt="" class="img6"> 温度
+                                    <div style="color: #FFFFFF;font-size: 1.4rem;margin-left: 10px;" id="tem" class="tian_num">0℃</div>
+                                </div>
+                                <div class="flex1 flexR" style="margin-top:30%;;">
+                                    <img src="img/湿度.png" alt="" class="img6"> 湿度
+                                    <div style="color: #FFFFFF;font-size: 1.4rem;margin-left: 10px;" id="humidity" class="tian_num">0%</div>
+                                </div>
+                            </div>
+                            <div style="border-right: 1px solid rgba(255, 255, 255, 0.3);height: 60%;width: 1%;"></div>
+                            <div style="color: rgba(255, 255, 255, 0.6);">
+                                <div class="flex1 flexR">
+                                    <img src="img/天气-气压.png" alt="" class="img6"> 气压
+                                    <div style="color: #FFFFFF;font-size: 1.4rem;margin-left: 10px;" id="pressure" class="tian_num">0Pa</div>
+                                </div>
+                                <div class="flex1 flexR" style="margin-top: 20%;;">
+                                    <img src="img/天气-风力.png" alt="" class="img6"> 风力
+                                    <div style="color: #FFFFFF;font-size: 1.4rem;margin-left: 10px;" id="win_meter" class="tian_num">0m/s</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="flexR spaceBetween" style="height: 60%;margin-top: 3%;width: 100%;display: none;" id="five_weather">
+                        <!-- <div style="border-right: 1px solid rgba(255, 255, 255, 0.3);height: 70%;margin-top: 6px;"> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+                <!-- 地图层 -->
+                <div class="health flexC spaceBetween" style="width:100%;height: 20%;background: url(img/Group63.png) no-repeat;background-size: 100% 100%;display: flex;
+                 align-items: center;
+                 justify-content: center;">
+                    <div id="allmap" style="width: 96%; height: 87%;border: 1px solid rgba(0, 169, 255, 0.3);"></div>
+                </div>
+
+                <!-- 故障隐患层 -->
+                <div class="fault flexC spaceBetween" style="height: 20%;">
+                    <div class="tts flexR spaceBetween" style="height: 32%;font-size: 1.3rem;">
+                        <div>电梯故障隐患率</div>
+                        <ul class="flexR uls cbc" style="cursor: pointer;" id="fault_id">
+                            <li data-id="week">周</li>|
+                            <li data-id="month">月</li>|
+                            <li data-id="quarter">季</li>|
+                            <li data-id="year" style="color:#00AAFF">年</li>
+                        </ul>
+                    </div>
+                    <div class="flexR spaceBetween" style="height: 68%;">
+                        <div class="flexC" style="width: 50%;height: 100%;">
+                            <div class="flexR" style="width: 100%;padding: 5%;box-sizing: border-box;height: 80%;display: flex;align-items: center;">
+                                <div style="width: 50%;height: 100%;">
+                                    <div id="fault1" style="width: 100%;height: 100%;"></div>
+                                </div>
+                                <div style="width: 50%;">
+                                    <div style="color: white;margin-bottom: 5px;font-size: 1.4rem;" id="f_num1">0</div>
+                                    <div style="color: white;margin-top:7px;color: rgba(255, 255, 255, 0.5);" id="f_name1"></div>
+                                </div>
+                            </div>
+                            <div style="width:50%;background: rgba(247, 197, 71, 0.3);color:  rgba(255, 255, 255, 0.5);margin-left: auto;display: flex;justify-content: center;align-items: center;height: 18%;" id="f_val1">
+                            </div>
+                            <div style="width: 90%;border-bottom: 1px solid  rgba(247, 197, 71, 0.5);;margin-left: auto;">
+                            </div>
+                        </div>
+                        <div class="flexC" style="width: 50%;height: 100%;">
+                            <div class="flexR" style="width: 100%;padding: 5%;box-sizing: border-box;height: 80%;display: flex;align-items: center;">
+                                <div style="width: 50%;height: 100%;">
+                                    <div id="fault2" style="width: 100%;height: 100%;"></div>
+                                </div>
+                                <div style="width: 50%;">
+                                    <div style="color: white;margin-bottom: 5px;font-size: 1.4rem;" id="f_num2">0</div>
+                                    <div style="color: white;margin-top: 7px;color: rgba(255, 255, 255, 0.5)" id="f_name2"></div>
+                                </div>
+                            </div>
+                            <div style="width:50%;background: rgba(247, 98, 97, 0.3); color:  rgba(255, 255, 255, 0.5);margin-left: auto;display: flex;justify-content: center;align-items: center;height: 18%;" id="f_val2">
+
+                            </div>
+                            <div style="width: 90%;border-bottom: 1px solid rgba(247, 98, 97, 0.5);;margin-left: auto;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 维保信息层 -->
+                <div class="fault-main flexC spaceBetween" style="height: 30%;">
+                    <div class="tts flexR spaceBetween" style="height: 23%;font-size: 1.3rem;">
+                        <div>故障维保信息</div>
+                        <ul class="flexR uls cbc">
+                            <li style="border: 0;">详情</li>
+                        </ul>
+                    </div>
+                    <div class="flexC" style="height: 83%;">
+                        <div class="fault_tt flexR" style="font-size: 1.3rem;background: rgba(0, 170, 255, 0.1);">
+                            <div class="flex1">
+                                <img src="img/电梯故障情况走马灯-故障名称.png" alt="" class="img6"> 故障名称
+                            </div>
+                            <div class="flex1">
+                                <img src="img/故障维保信息-维保时间.png" alt="" class="img6"> 维保时间
+                            </div>
+                            <div class="flex1">
+                                <img src="img/故障维保信息-维保人.png" alt="" class="img6"> 维保人
+                            </div>
+                            <div class="flex1" style="margin-right: 3%;">
+                                <img src="img/故障维保信息-电话.png" alt="" class="img6"> 电话
+                            </div>
+                        </div>
+                        <ul class="fault_cont scrolls" id="fault_coua" style="overflow:scroll;overflow-x: hidden;">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="model" class="md-content flexC spaceBetween" style="display: none;">
+        <div class="md_top flexR spaceBetween">
+            <div class="md_top_left flexR">
+                <div class="switch flexR">
+                    <img src="img/地名按钮-位置图标.png" alt="" class="img3">
+                    <div id="national">切换至全国</div>
+                </div>
+                <!-- <div class="seachs">
+                     <input type="text" class="seach">
+                     <img src="img/搜索icon.png" alt="" class="seach_img">
+                 </div> -->
+            </div>
+            <div class="md_top_tt">地区选择</div>
+            <div class="md_top_right flexR">
+                <div class="btn" id="confirm" style="background: #325FFB;margin-right: 10px;">确认</div>
+                <div class="btn" id="cancel">取消</div>
+            </div>
+        </div>
+        <div class="md_content">
+            <div class="md_content_tt flexR spaceBetween">
+                <div class="column_tt">省</div>
+                <div class="column_tt">市</div>
+                <div class="column_tt">区县</div>
+                <div class="column_tt">街道</div>
+                <div class="column_tt">小区/物业</div>
+                <div class="column_tt">电梯</div>
+            </div>
+            <div class="md_content_ct flexR spaceBetween">
+                <ul class="column" id="column1"></ul>
+                <ul class="column" id="column2"></ul>
+                <ul class="column" id="column3"></ul>
+                <ul class="column" id="column4"></ul>
+                <ul class="column" id="column5"></ul>
+                <ul class="column" id="column6"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/comm.js"></script>
+    <script src="js/base64.js"></script>
+    <script type="text/javascript" src="js/sort.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=l4ZYFYFK0GWggZg2Xy5f1UZkPU6nOsZc"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="layui/layui.all.js"></script>
+    <script type="text/javascript" src="js/model.js"></script>
+    <script src="js/elevator.js"></script>
+
+
+</body>
+
+</html>

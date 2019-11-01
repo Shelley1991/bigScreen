@@ -1,0 +1,721 @@
+body,
+html {
+    background: #00090D;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-width: 1366px;
+    font-family: 'SimHei';
+    background: url(../img/beijing.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 1980px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.flexR {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexC {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.flex3 {
+    flex: 3;
+}
+
+.flex4 {
+    flex: 4;
+}
+
+.flex5 {
+    flex: 5;
+}
+
+.flex6 {
+    flex: 6;
+}
+
+.flex9 {
+    flex: 9;
+}
+
+
+/* header */
+
+.header {
+    height: 7%;
+    min-height: 50px;
+    width: 100%;
+    /* background: #000; */
+    border-bottom: 1px solid #6e7177;
+    padding: 0 30px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo>img {
+    width: 60%;
+    height: 50%;
+}
+
+.nav {
+    padding-left: 4%;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.nav>li {
+    width: 50px;
+    height: 100%;
+}
+
+.nav>li>a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected {
+    background: url(../img/nav.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.nav>li>a>img {
+    width: 16px;
+    height: 16px;
+}
+
+.information {
+    display: flex;
+    justify-content: space-between;
+}
+
+.head {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic {
+    display: none;
+    width: 20px;
+    height: 20px;
+    background: blueviolet;
+    border-radius: 50%;
+}
+
+.pic>img {
+    width: 100%;
+    height: 100%;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+
+.back>img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.Identity-switch {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* content */
+
+.content {
+    height: 93%;
+    min-height: 610px;
+    width: 100%;
+    /* background: url(../img/beijing.jpg) no-repeat;
+    background-size: 100% 100%; */
+    padding: 30px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.common {
+    background: #181e27;
+    padding: 20px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.mintitle {
+    margin-bottom: 10px;
+    color: #cbced3;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.lf {
+    width: 24%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lf-top {
+    width: 100%;
+    height: 36.8%;
+}
+
+.equipment {
+    width: 100%;
+    margin-top: 15%;
+    color: #cbced3;
+    font-size: 14px;
+}
+
+.eq {
+    /* border: 1px solid blue; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tt {
+    font-size: 14px;
+    color: #cbced3;
+    margin-right: 4%;
+}
+
+.count {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 10px;
+    font-weight: bold;
+}
+
+.lf-bottom {
+    width: 100%;
+    height: 60%;
+}
+
+.pie-tt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.square {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.square-name {
+    font-size: 12px;
+    color: #cbced3;
+}
+
+
+/* map 地图区域 版本1 */
+
+.cn {
+    width: 50%;
+    height: 100%;
+    margin: 0 2%;
+}
+
+.map-data {
+    width: 100%;
+    height: 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.mapdata1 {
+    width: 17%;
+    height: 100%;
+    margin-left: 4%;
+}
+
+.mapdata1-top {
+    width: 100%;
+    height: 41%;
+    display: flex;
+}
+
+.mapimg {
+    margin-top: 2px;
+    width: 14px;
+    height: 14px;
+    margin-right: 5%;
+}
+
+.maptitle {
+    color: rgba(203, 206, 211, 1);
+    letter-spacing: -2px;
+    font-size: 14px;
+}
+
+.line {
+    margin-top: 10px;
+    width: 2px;
+    height: 40%;
+    background: #fff;
+}
+
+.map {
+    position: relative;
+}
+
+.retun {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 2%;
+    width: 30px;
+    height: 30px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+
+/*map 地图区域 版本2 */
+
+.cn2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cn-left {
+    width: 37%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cn-left-piece {
+    width: 100%;
+    height: 23%;
+    padding: 20px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.piece {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piece-img {
+    width: 60px;
+    height: 60px;
+}
+
+.piece-tt {
+    width: 76px;
+    height: 24px;
+    font-size: 18px;
+    font-family: STHeitiSC;
+    font-weight: 500;
+    color: rgba(203, 206, 211, 1);
+    line-height: 19px;
+}
+
+.piece-num {
+    width: 95px;
+    height: 26px;
+    font-size: 34px;
+    font-family: Arial;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 1);
+    line-height: 26px;
+    letter-spacing: 1px;
+}
+
+.cn-right {
+    width: 58%;
+    height: 100%;
+}
+
+.cn-rg-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.equipment-title {
+    border-left: 2px solid #FFFFFF;
+    width: 80px;
+    height: 20px;
+    font-size: 18px;
+    font-family: STHeitiSC;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    line-height: 21px;
+    padding-left: 10px;
+}
+
+.mark {
+    width: 40%;
+    height: 21px;
+}
+
+.mark-son-img {
+    width: 13px;
+    height: 13px;
+    margin-right: 10px;
+}
+
+.mark-son {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-family: STHeitiSC;
+    color: rgba(203, 206, 211, 1);
+}
+
+.sels2 {
+    background: rgba(110, 113, 119, 0.1);
+}
+
+.equipment-tb {
+    width: 100%;
+    margin-top: 20px;
+    height: 87%;
+    overflow: auto;
+    overflow-x: hidden;
+    background: rgba(110, 113, 119, 0.1);
+}
+
+.equipment--ul-tb {
+    width: 100%;
+    height: 100%;
+}
+
+.equipment-ul-tb>li {
+    width: 99%;
+    font-size: 14px;
+    font-family: STHeitiSC;
+    font-weight: 500;
+    height: 64px;
+    color: rgba(203, 206, 211, 1);
+}
+
+.equipment-ul-tb>li:hover {
+    border: #976CFF 1px solid;
+    color: #fff;
+}
+
+.stateimg {
+    width: 20px;
+    height: 20px;
+}
+
+.rg {
+    width: 24%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.area {
+    width: 100%;
+    height: 7%;
+    background: linear-gradient(#39455B, #181E28);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.area-img {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+}
+
+.fault {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fault-tt {
+    font-size: 14px;
+    color: #cbced3;
+    /* margin-right: 4%; */
+}
+
+.progress {
+    justify-content: center;
+    width: 60%;
+    height: 10px;
+}
+
+.fill1 {
+    margin: 0 2.5% 0;
+    width: 10px;
+    height: 10px;
+    background: #30363f;
+    border-radius: 50%;
+}
+
+.fill2 {
+    background: #4cc7ad;
+}
+
+.fill3 {
+    background: #8b41fb;
+}
+
+.fill4 {
+    background: #D39863;
+}
+
+.fill5 {
+    background: #ce7da3;
+}
+
+.amount {
+    width: 20%;
+    text-align: right;
+    font-size: 12px;
+    color: #cbced3;
+}
+
+.real-time {
+    padding: 20px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.picture {
+    padding: 0 20px 0;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.real {
+    font-size: 14px;
+    color: rgba(203, 206, 211, 1);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.real>img {
+    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+}
+
+.fault-content {
+    margin-top: 15px;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.fault-content-ul {
+    width: 100%;
+    height: 100%;
+}
+
+.fl {
+    width: 100%;
+    height: 12.5%;
+}
+
+.fault-content-ul>li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px 0;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: #CBCED3;
+    font-size: 14px;
+}
+
+.fault-content-ul>li:hover {
+    border: #976CFF 1px solid;
+    color: #fff!important;
+}
+
+.tb {
+    font-size: 14px;
+    color: #CBCED3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* model */
+
+body .model {
+    background: rgba(67, 71, 79, 1);
+    box-shadow: 1px -1px 10px 4px rgba(0, 0, 0, 0.34);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body .model .layui-layer-title {
+    background: rgba(67, 71, 79, 1);
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid rgba(67, 71, 79, 1);
+}
+
+.md-content {
+    width: 99%;
+    height: 92%;
+}
+
+.select {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sel {
+    height: 25px;
+    background: rgba(24, 30, 40, 0.6);
+    color: #fff;
+    border: 0;
+    font-size: 12px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.model-tt {
+    width: 100%;
+    height: 40px;
+    background: rgba(24, 30, 40, 0.3);
+    margin-top: 10px;
+}
+
+.model-img {
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+}
+
+.model-tb {
+    width: 100%;
+    height: 75%;
+}
+
+.model-tb-ul {
+    width: 100%;
+    height: 100%;
+}
+
+.model-tb-ul>li {
+    width: 100%;
+    height: 10%;
+    color: #6E7177;
+    font-size: 14px;
+}
+
+.model-tb-ul>li:hover {
+    border: #976CFF 1px solid;
+    color: #fff!important;
+}
+
+
+/* equipment.html---css */
+
+.fault2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fault-tt2 {
+    font-size: 14px;
+    color: #cbced3;
+    width: 32%;
+}
+
+.box {
+    width: 45%;
+    height: 6px;
+    background: rgba(49, 55, 64, 1);
+    border-radius: 5px;
+}
+
+.proportion1 {
+    border-radius: 5px;
+}
+
+.proportion2 {
+    border-radius: 5px;
+}
+
+.proportion3 {
+    border-radius: 5px;
+}
+
+.proportion4 {
+    border-radius: 5px;
+}

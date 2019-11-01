@@ -1,0 +1,300 @@
+html {
+    font-size: 62.5%;
+}
+
+.center {
+    width: 44%;
+    height: 100%;
+    background: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.pies1 {
+    width: 36%;
+    height: 80%;
+}
+
+.img4_yun {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+}
+
+.uls>li {
+    color: #99a9b1;
+}
+
+
+/* current_position 电梯安全性能排行 */
+
+.current_position {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: #00496E;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.current_lf {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.current_lf>img {
+    width: 25px;
+}
+
+.current_name {
+    margin-left: 13px;
+}
+
+.ming {
+    color: #00aaff;
+    margin: 0 5px;
+}
+
+.Safety_ul2 {
+    background: #001119;
+}
+
+.Safety_ul2>li {
+    height: 17%;
+}
+
+
+/* equipment */
+
+.equipment {
+    margin-top: 4%;
+    height: 76%;
+    width: 100%;
+    max-height: 682px;
+}
+
+.equipment_list {
+    width: 100%;
+    height: 88%;
+    border: 1px solid;
+    border-image: linear-gradient(to top, rgba(0, 170, 255, 0%), rgba(0, 170, 255, 20%), rgba(0, 170, 255, 30%) 80%, rgba(0, 170, 255, 40%)) 1;
+}
+
+.list_tt {
+    width: 100%;
+    height: 10%;
+}
+
+.list_tt>.flex1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.img10 {
+    width: 18px;
+    margin-right: 5px;
+}
+
+.lists {
+    cursor: pointer;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    overflow: auto;
+    overflow-x: hidden;
+    background: #001925;
+}
+
+.lists>li {
+    width: 100%;
+    height: 10%;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3rem;
+}
+
+.lists>li>.flex1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .flex_one {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+} */
+
+
+/* Hazard_rate */
+
+.Hazard_rate {
+    height: 45%;
+    width: 100%;
+    max-height: 404px;
+}
+
+.Hazards {
+    height: 40%;
+    width: 100%;
+}
+
+
+/* .Hazard1>.flex1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid brown;
+} */
+
+.Hazard1>.flex1>.flex1 {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.img11 {
+    width: 20%;
+    height: 60%;
+    margin-right: 5%;
+}
+
+.img11_rt {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+    font-size: 1.2rem;
+    color: #fff;
+    border-bottom: 1px solid #002131;
+    position: relative;
+}
+
+.img11_tt {
+    margin-bottom: 10%;
+    color: #99A6AD;
+}
+
+.block {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #002131;
+    width: 60%;
+    height: 30%;
+    display: flex;
+    color: #99A6AD;
+    align-items: center;
+    justify-content: center;
+}
+
+.Hazard2_lf_rt {
+    width: 35%;
+}
+
+.Hazard2_lf_rt>.flex1 {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.img12 {
+    width: 30%;
+    height: 80%;
+    margin-right: 7%;
+}
+
+.Hazard2_cen {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* coordinates */
+
+.coordinates {
+    height: 20%;
+    width: 100%;
+    background: url(../img/地图框.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 180px;
+}
+
+.coord {
+    height: 89%;
+    width: 96%;
+    border: 2px solid rgba(0, 169, 255, 0.3);
+}
+
+
+/* ******************滚动条样式 */
+
+.lists::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 5px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+.lists::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow: inset 0 0 2px #00AAFF;
+    background: #00AAFF;
+}
+
+.lists::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 2px #00AAFF;
+    border-radius: 10px;
+    background: #001925;
+}
+
+@media screen and (min-width:1980px) {
+    .position_city {
+        font-size: 1.6rem;
+    }
+    .tts {
+        font-size: 1.6rem;
+        width: 100%;
+        max-height: 228px;
+    }
+    .an_bt1,
+    .an_bt2,
+    .an_bt3 {
+        font-size: 1.5rem;
+    }
+    .overview_tt {
+        font-size: 1.6rem;
+    }
+    .img11_rt {
+        font-size: 1.4rem;
+    }
+    .uls>li {
+        font-size: 1.4rem;
+    }
+    .to__led-number {
+        font-size: 2.5rem!important;
+    }
+    .ans_tt {
+        font-size: 1.4rem;
+    }
+}

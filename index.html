@@ -1,0 +1,368 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-10-29 16:24:09
+ * @LastEditTime: 2019-10-30 11:19:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Json_Code\Internet-ofthings\index.html
+ -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>首页</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/comm.css">
+    <style>
+        .to__led-number {
+            font-family: 'Roboto';
+            position: relative;
+            font-size: 20px;
+            font-weight: bold;
+            height: 100%;
+            display: flex;
+            flex: 33;
+            align-items: center;
+            justify-content: center;
+            background: url(img/数字.png) no-repeat;
+            background-size: 100% 100%;
+            margin: 0 1px;
+        }
+        
+        .to__led-number--no {
+            flex: 1;
+            width: 0px;
+            margin-top: 4%;
+            background: 0;
+            color: #F7C547;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="container">
+        <!-- header -->
+        <div class="header flexR">
+            <div class="img1">
+                <div class="box1 flexC">
+                    <div class="time" id="timeOne" style="font-weight: bold;"></div>
+                    <div class="date" id="timeTwo"></div>
+                </div>
+            </div>
+            <div class="title">
+                <img src="img/大标题.png" alt="">
+            </div>
+            <div class="img2 flexR">
+                <div style="margin-left: auto;">湖州市政府</div>
+                <img src="img/三角形.png" alt="" width="12px" style="margin-left: 10px">
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="content flexR">
+            <div class="left flexC">
+                <div class="positioning flexR spaceBetween" id="model_open">
+                    <div class="flexR" style="display: flex;align-items: center;">
+                        <img src="img/地名按钮-位置图标.png" alt="" class="img3">
+                        <p class="position_city" id="position_city">全国</p>
+                    </div>
+                    <img src="img/s级.png" alt="" height="60%" style="margin-right:7%;">
+                </div>
+                <div class="overview flexC">
+                    <div class="tts">总体概览</div>
+                    <div class="overview_cont flexR">
+                        <div class="flex1 flexC">
+                            <div class="flex1 alignItems ">
+                                <div class="pies">
+                                    <div id="pie1" style="width: 100%;height: 100%;"></div>
+                                    <img src="img/pie1.png" alt="" class="img4">
+                                </div>
+                                <div class="overview_val flexC">
+                                    <div class="num" id="num1">0</div>
+                                    <div class="overview_tt">电梯厂家覆盖率&nbsp;&nbsp;</div>
+                                </div>
+                            </div>
+                            <div class="flex1 alignItems">
+                                <div class="pies">
+                                    <div id="pie3" style="width: 100%;height: 100%;"></div>
+                                    <img src="img/pie3.png" alt="" class="img4">
+                                </div>
+                                <div class="overview_val flexC">
+                                    <div class="num" id="num3">0</div>
+                                    <div class="overview_tt">电梯保有量覆盖率</div>
+                                </div>
+                            </div>
+                            <div class="flex1 alignItems">
+                                <div class="pies">
+                                    <div id="pie5" style="width: 100%;height: 100%;"></div>
+                                    <img src="img/pie5.png" alt="" class="img4">
+                                </div>
+                                <div class="overview_val flexC">
+                                    <div class="num" id="num5">0</div>
+                                    <div class="overview_tt">省市覆盖率&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex1 flexC">
+                            <div class="flex1 alignItems">
+                                <div class="pies">
+                                    <div id="pie2" style="width: 100%;height: 100%;"></div>
+                                    <img src="img/pie2.png" alt="" class="img4">
+                                </div>
+                                <div class="overview_val flexC">
+                                    <div class="num" id="num2">0</div>
+                                    <div class="overview_tt">小区物业覆盖率</div>
+                                </div>
+                            </div>
+                            <div class="flex1 alignItems">
+                                <div class="pies">
+                                    <div id="pie4" style="width: 100%;height: 100%;"></div>
+                                    <img src="img/pie4.png" alt="" class="img4">
+                                </div>
+                                <div class="overview_val flexC">
+                                    <div class="num" id="num4">0</div>
+                                    <div class="overview_tt">房产公司覆盖率</div>
+                                </div>
+                            </div>
+                            <div class="flex1 alignItems">
+                                <div class="pies">
+                                    <div id="pie6" style="width: 100%;height: 100%;"></div>
+                                    <img src="img/pie6.png" alt="" class="img4">
+                                </div>
+                                <div class="overview_val flexC">
+                                    <div class="num" id="num6">0</div>
+                                    <div class="overview_tt">维保公司覆盖率</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Safety_performance flexC spaceBetween">
+                    <div class="tts flexR spaceBetween">
+                        <div>电梯安全性能排行</div>
+                        <ul class="flexR uls" id="ranking_uls">
+                            <!-- style="border: 0;color:#00AAFF;" -->
+                            <li style="border: 0" data-id="provice" id="pr">省</li>
+                            <!-- <li style="display: none;border: 0" data-id="city">市</li> -->
+                            <!-- <li data-id="district">区县</li>
+                            <li data-id="street">街道</li>
+                            <li data-id="community">小区</li> -->
+                        </ul>
+                    </div>
+                    <div class="Safety_performance_cont">
+                        <ul class="Safety_ul" id="Safety_ul">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="center flexC">
+                <div class="run flexC spaceBetween">
+                    <div class="Digital_animation flexR spaceBetween">
+                        <div class="animation flexC spaceBetween">
+                            <div class="ans ans_tt"> 运行总时长(h)</div>
+                            <div class="ans ans1 flexR spaceBetween" id="ans1"></div>
+                        </div>
+                        <div class="animation flexC spaceBetween">
+                            <div class="ans ans_tt"> 运输总里程(km)</div>
+                            <div class="ans ans2 flexR spaceBetween"></div>
+                        </div>
+                        <div class="animation flexC spaceBetween">
+                            <div class="ans ans_tt"> 运输总楼层(layers)</div>
+                            <div class="ans ans3 flexR spaceBetween"></div>
+                        </div>
+                    </div>
+                    <div class="Digital_bottom flexR spaceBetween">
+                        <div class="animation an_bt1 spaceBetween">
+                            <div class="she">设备总量(<span id="unit1"></span>台)</div>
+                            <div style="font-size: 16px;color: #FFB641;font-weight: bold;display: flex;align-items: center;" id="equipment1">0</div>
+                        </div>
+                        <div class="animation an_bt2 spaceBetween">
+                            <div class="she">设备价值(<span id="unit2"></span>元)</div>
+                            <div style="font-size: 16px;color: #F05858;font-weight: bold;display: flex;align-items: center;" id="equipment2">0</div>
+                        </div>
+                        <div class="animation an_bt3 spaceBetween">
+                            <div class="she">设备运输总人数(<span id="unit3"></span>人)</div>
+                            <div style="font-size: 16px;color: #00AAFF;font-weight: bold;display: flex;align-items: center;" id="equipment3">0</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- map  -->
+                <div class="map">
+                    <div id="map" style="width:100%;height:100%;box-sizing: border-box;"></div>
+                    <img src="img/返回.png" alt="" class="retun" id="backmap" style="display: none;">
+                </div>
+                <div class="statistical flexR">
+                    <div class="flex1 flexR">
+                        <img src="img/省数量.png" alt="" class="img7">
+                        <div class="img7_rt flexC">
+                            <div id="province">0</div>
+                            <div style="font-size: 12px;margin-top:5px;">省数量</div>
+                        </div>
+                    </div>
+                    <div class="flex1 flexR">
+                        <img src="img/市数量.png" alt="" class="img7">
+                        <div class="img7_rt flexC">
+                            <div id="city">0</div>
+                            <div style="font-size: 12px;margin-top:5px;">市数量</div>
+                        </div>
+                    </div>
+                    <div class="flex1 flexR">
+                        <img src="img/省数量.png" alt="" class="img7">
+                        <div class="img7_rt flexC">
+                            <div id="district">0</div>
+                            <div style="font-size: 12px;margin-top:5px;">区县数量</div>
+                        </div>
+                    </div>
+                    <div class="flex1 flexR">
+                        <img src="img/市数量.png" alt="" class="img7">
+                        <div class="img7_rt flexC">
+                            <div id="street">0</div>
+                            <div style="font-size: 12px;margin-top:5px;">街道数量</div>
+                        </div>
+                    </div>
+                    <div class="flex1 flexR">
+                        <img src="img/省数量.png" alt="" class="img7">
+                        <div class="img7_rt flexC">
+                            <div id="community">0</div>
+                            <div style="font-size: 12px;margin-top:5px;">小区数量</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right flexC">
+                <div class="maintenance flexC">
+                    <div class="tts" style="height: 30%;">电梯故障维保信息概览</div>
+                    <div class="maintenance_cont flexR spaceBetween">
+                        <div class="md flexC">
+                            <div class="img5_rt_num flexR">
+                                <div id="Maintenance1">0</div>
+                                <div id="unit4" class="un"></div><span style="font-size: 12px;">次</span>
+                            </div>
+                            <div class="img5_rt flexR">
+                                <img src="img/电梯故障维保信息概览-故障发生数.png" alt="" class="img5">
+                                <div class="img5_rt_tt">故障发生数</div>
+                            </div>
+                        </div>
+                        <div class="md flexC">
+                            <div class="img5_rt_num flexR">
+                                <div id="Maintenance2">0</div>
+                                <div id="unit5" class="un"></div><span style="font-size: 12px;">次</span>
+                            </div>
+                            <div class="img5_rt flexR">
+                                <img src="img/电梯故障维保信息概览-维保总次数.png" alt="" class="img5">
+                                <div class="img5_rt_tt">维保总次数</div>
+                            </div>
+                        </div>
+                        <div class="md flexC">
+                            <div class="img5_rt_num flexR">
+                                <div id="Maintenance3">0</div>
+                                <div id="unit6" class="un"></div><span style="font-size: 12px;">元</span>
+                            </div>
+                            <div class="img5_rt flexR">
+                                <img src="img/电梯故障维保信息概览-维保总价值.png" alt="" class="img5">
+                                <div class="img5_rt_tt">维保总价值</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="health flexC">
+                    <div class="tts flexR spaceBetween" style="height:18%;">
+                        <div>电梯健康状况</div>
+                        <ul class="flexR uls" id="health_uls">
+                            <li style="border: 0;" id="week">周</li>
+                            <li id="month">月</li>
+                            <li id="quarter">季</li>
+                            <li id="year" style="color:#00AAFF;">年</li>
+                        </ul>
+                    </div>
+                    <!-- 柱状图 -->
+                    <div class="health_figure">
+                        <div id="bar" style="width:100%;height:100%;"></div>
+                    </div>
+                </div>
+                <div class="fault">
+                    <div class="tts" style="height: 15%;">电梯故障情况走马灯</div>
+                    <div class="fault_tt flexR">
+                        <div class="flex1">
+                            <img src="img/电梯故障情况走马灯-故障名称.png" alt="" class="img6"> 故障名称
+                        </div>
+                        <div class="flex1">
+                            <img src="img/电梯故障情况走马灯-故障地点.png" alt="" class="img6"> 故障地点
+                        </div>
+                        <div class="flex1">
+                            <img src="img/电梯故障情况走马灯-故障状态.png" alt="" class="img6"> 故障状态
+                        </div>
+                    </div>
+                    <div class="fault_cont" id="tables">
+                        <ul class="fault-cont-ul" id="fault-cont-ul">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 区域列表弹窗 -->
+    <div id="model" class="md-content flexC spaceBetween" style="display: none;">
+        <div class="md_top flexR spaceBetween">
+            <div class="md_top_left flexR">
+                <div class="switch flexR">
+                    <img src="img/地名按钮-位置图标.png" alt="" class="img3">
+                    <div id="national">切换至全国</div>
+                </div>
+                <!-- <div class="seachs">
+                    <input type="text" class="seach">
+                    <img src="img/搜索icon.png" alt="" class="seach_img">
+                </div> -->
+            </div>
+            <div class="md_top_tt">地区选择</div>
+            <div class="md_top_right flexR">
+                <div class="btn" id="confirm" style="background: #325FFB;margin-right: 10px;">确认</div>
+                <div class="btn" id="cancel">取消</div>
+            </div>
+        </div>
+        <div class="md_content">
+            <div class="md_content_tt flexR spaceBetween">
+                <div class="column_tt">省</div>
+                <div class="column_tt">市</div>
+                <div class="column_tt">区县</div>
+                <div class="column_tt">街道</div>
+                <div class="column_tt">小区/物业</div>
+                <div class="column_tt">电梯</div>
+            </div>
+            <div class="md_content_ct flexR spaceBetween">
+                <ul class="column" id="column1"></ul>
+                <ul class="column" id="column2"></ul>
+                <ul class="column" id="column3"></ul>
+                <ul class="column" id="column4"></ul>
+                <ul class="column" id="column5"></ul>
+                <ul class="column" id="column6"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js "></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="layui/layui.all.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/sort.js"></script>
+    <script src="js/comm.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

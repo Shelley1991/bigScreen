@@ -1,0 +1,497 @@
+html {
+    font-size: 62.5%;
+}
+
+
+/* .uls>li {
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 5px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-left: #fff 1px solid;
+} */
+
+.cbc>li {
+    cursor: pointer;
+    color: #99a9b1;
+    font-size: 1rem;
+    padding: 0 5px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* border-left: #fff 1px solid; */
+}
+
+.qw {
+    border: 1px solid;
+    border-image: linear-gradient(to top, rgba(0, 170, 255, 0%), rgba(0, 170, 255, 20%), rgba(0, 170, 255, 30%) 80%, rgba(0, 170, 255, 40%)) 1;
+}
+
+progress {
+    width: 70%;
+    height: 7px;
+    background: rgba(0, 170, 255, 0.03);
+}
+
+
+/* :-webkit-progress-bar 全部进度
+    :-webkit-progress-value 已完成进度 */
+
+progress::-webkit-progress-bar {
+    background: rgba(0, 170, 255, 0.15);
+    border-radius: 11px;
+}
+
+progress::-webkit-progress-value {
+    background: #2DB154;
+    border-radius: 11px;
+}
+
+.progress1::-webkit-progress-value {
+    background: #F76261;
+    border-radius: 11px;
+}
+
+.progress2::-webkit-progress-value {
+    background: #00AAFF;
+    border-radius: 11px;
+}
+
+.progress3::-webkit-progress-value {
+    background: #F7C547;
+    border-radius: 11px;
+}
+
+.date {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 5px;
+}
+
+center {
+    height: 100%;
+    width: 44%;
+    background: url(../img/地球.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.Digital_animation {
+    height: 100%;
+    width: 100%;
+}
+
+.animation {
+    width: 32%;
+    height: 100%;
+}
+
+.ans {
+    height: 48%;
+    width: 100%;
+    color: #000;
+}
+
+.ans_tt {
+    background: url(../img/数字牌-标题背景.png) no-repeat;
+    background-size: 102% 100%;
+    border: 0;
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Digital_bottom {
+    height: 100%;
+    width: 100%;
+}
+
+.an_bt1 {
+    height: 100%;
+    background: url(../img/设备总量.png) no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.an_bt1>.flex1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.an_bt1>.flex2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.an_bt2>.flex1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.an_bt2>.flex2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.an_bt3>.flex1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.an_bt3>.flex2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.an_bt2 {
+    height: 100%;
+    background: url(../img/设备价值.png) no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.an_bt3 {
+    height: 100%;
+    background: url(../img/设备总人数.png) no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.map {
+    width: 100%;
+    height: 70%;
+}
+
+.statistical {
+    font-size: 1.2rem;
+    width: 100%;
+    height: 10%;
+}
+
+.statistical_top>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistical_top>div>img {
+    width: 12px;
+    margin-right: 5px;
+}
+
+.statistical_bottom .flexC .flex1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.img7 {
+    width: 26px;
+    margin-right: 5px;
+}
+
+.BMap_cpyCtrl {
+    display: none;
+}
+
+.anchorBL {
+    display: none;
+}
+
+.tier>.flex1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    /* font-size: 14px; */
+}
+
+.textLeft {
+    margin-left: 2%;
+}
+
+.textA {
+    font-size: 1.4rem;
+}
+
+.textC {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 5px;
+}
+
+.scrolls::-webkit-scrollbar {
+    display: none;
+}
+
+.leftEle {
+    padding: 5px 5px 5px 4%;
+    width: 90%;
+    border-radius: 6px;
+    background: #001925;
+    height: 17%;
+}
+
+.textStyle {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    justify-content: end;
+    margin-right: 5%;
+}
+
+body .model {
+    background: #001925;
+    background: url(../img/000.png) no-repeat;
+    background-size: 100% 100%;
+    max-width: 1940px;
+    /* box-shadow: 1px -1px 10px 4px #001925; */
+    border-radius: 10px;
+    color: #fff;
+}
+
+body .model .layui-layer-title {
+    display: none;
+    /* background: #001925;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #001925; */
+}
+
+.layui-layer-page .layui-layer-content {
+    width: 100%;
+    height: 100%!important;
+}
+
+.md-content {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 3%;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.md_top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.md_top_left {
+    height: 100%;
+}
+
+.seachs {
+    position: relative;
+    margin-left: 20px;
+    width: 180px;
+    height: 30px;
+}
+
+.switch {
+    width: 120px;
+    height: 30px;
+    background: #325FFB;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 0 10px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    cursor: pointer;
+}
+
+.seach {
+    width: 100%;
+    height: 100%;
+    background: #00293D;
+    border: 1px solid #00AAFF;
+    box-sizing: border-box;
+    border-radius: 26.5px;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 0 10px 0 30px;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.seach_img {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 20px;
+}
+
+.md_top_tt {
+    color: #FFFFFF;
+    height: 100%;
+    font-size: 1.8rem;
+}
+
+.md_top_right {
+    height: 100%;
+}
+
+.btn {
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    font-size: 1.4rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F76261;
+    cursor: pointer;
+}
+
+.md_content {
+    height: 90%;
+    width: 100%;
+}
+
+.md_content_tt {
+    width: 100%;
+    height: 8%;
+}
+
+.column_tt {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    background: #003651;
+}
+
+.md_content_ct {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 90%;
+}
+
+.column {
+    width: 15%;
+    height: 100%;
+    background: #002131;
+    overflow: auto;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+
+.column>li {
+    width: 100%;
+    height: 10%;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.column>li:hover {
+    background: #00537C!important;
+}
+
+.img_arrow {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    margin-top: -6px;
+    width: 12px;
+    display: none;
+}
+
+.colorsadd {
+    background: #00537C!important;
+    color: #00AAFF!important;
+}
+
+
+/* ******************滚动条样式 */
+
+.column::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 5px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+.column::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow: inset 0 0 2px #00AAFF;
+    background: #00AAFF;
+}
+
+.column::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 2px #00AAFF;
+    border-radius: 10px;
+    background: #001925;
+}
+
+@media screen and (min-width:1980px) {
+    .statistical {
+        font-size: 1.5rem!important;
+    }
+    .statistical_bottom .flexC .flex1 {
+        font-size: 1.4rem!important;
+    }
+    .to__led-number {
+        font-size: 2.5rem!important;
+    }
+    .ans_tt {
+        font-size: 1.4rem!important;
+    }
+    .tian {
+        font-size: 1.6rem;
+    }
+    .tian_num {
+        font-size: 1.6rem!important;
+    }
+    .parameter {
+        font-size: 1.6rem!important;
+    }
+}
